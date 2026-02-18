@@ -1,0 +1,169 @@
+@import 'tailwindcss';
+@import 'tw-animate-css';
+
+@custom-variant dark (&:is(.dark *));
+
+:root {
+  /* Warm cream background */
+  --background: #FFF8EE;
+  --foreground: #2D2A26;
+
+  /* Card: white with warm tint */
+  --card: #FFFFFF;
+  --card-foreground: #2D2A26;
+
+  --popover: #FFFFFF;
+  --popover-foreground: #2D2A26;
+
+  /* Primary: Sun-bright yellow */
+  --primary: #FFD700;
+  --primary-foreground: #2D2A26;
+
+  /* Secondary: Lush garden green */
+  --secondary: #2E7D32;
+  --secondary-foreground: #FFFFFF;
+
+  /* Muted: warm light tone */
+  --muted: #F5EFE0;
+  --muted-foreground: #6B6560;
+
+  /* Accent: Heirloom tomato red */
+  --accent: #E53935;
+  --accent-foreground: #FFFFFF;
+
+  --destructive: #E53935;
+  --destructive-foreground: #FFFFFF;
+
+  --border: #E8DCC8;
+  --input: #E8DCC8;
+  --ring: #FFD700;
+
+  --chart-1: #FFD700;
+  --chart-2: #2E7D32;
+  --chart-3: #E53935;
+  --chart-4: #FF9800;
+  --chart-5: #66BB6A;
+
+  --radius: 1rem;
+
+  --sidebar: #FFF8EE;
+  --sidebar-foreground: #2D2A26;
+  --sidebar-primary: #2E7D32;
+  --sidebar-primary-foreground: #FFFFFF;
+  --sidebar-accent: #F5EFE0;
+  --sidebar-accent-foreground: #2D2A26;
+  --sidebar-border: #E8DCC8;
+  --sidebar-ring: #FFD700;
+
+  /* Custom nursery tokens */
+  --sun-yellow: #FFD700;
+  --garden-green: #2E7D32;
+  --tomato-red: #E53935;
+  --pepper-orange: #FF9800;
+  --herb-green: #66BB6A;
+  --cream: #FFF8EE;
+  --warm-white: #FFFDF7;
+  --chalkboard: #2D3A2E;
+  --chalkboard-text: #E8E0D0;
+}
+
+@theme inline {
+  --font-sans: var(--font-nunito), 'Nunito', sans-serif;
+  --font-serif: var(--font-bubblegum), 'Bubblegum Sans', cursive;
+  --font-mono: 'Geist Mono', 'Geist Mono Fallback';
+
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-chart-1: var(--chart-1);
+  --color-chart-2: var(--chart-2);
+  --color-chart-3: var(--chart-3);
+  --color-chart-4: var(--chart-4);
+  --color-chart-5: var(--chart-5);
+
+  --color-sun-yellow: var(--sun-yellow);
+  --color-garden-green: var(--garden-green);
+  --color-tomato-red: var(--tomato-red);
+  --color-pepper-orange: var(--pepper-orange);
+  --color-herb-green: var(--herb-green);
+  --color-cream: var(--cream);
+  --color-warm-white: var(--warm-white);
+  --color-chalkboard: var(--chalkboard);
+  --color-chalkboard-text: var(--chalkboard-text);
+
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --radius-2xl: calc(var(--radius) + 8px);
+
+  --color-sidebar: var(--sidebar);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-ring: var(--sidebar-ring);
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+}
+
+/* Wiggle animation for plant cards */
+@keyframes wiggle {
+  0%, 100% { transform: rotate(-1.5deg) scale(1.03); }
+  50% { transform: rotate(1.5deg) scale(1.03); }
+}
+
+@keyframes bounce-gentle {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-6px); }
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0) rotate(0deg); }
+  33% { transform: translateY(-4px) rotate(1deg); }
+  66% { transform: translateY(2px) rotate(-1deg); }
+}
+
+.animate-wiggle {
+  animation: wiggle 0.4s ease-in-out infinite;
+}
+
+.animate-bounce-gentle {
+  animation: bounce-gentle 2s ease-in-out infinite;
+}
+
+.animate-float {
+  animation: float 3s ease-in-out infinite;
+}
+
+/* Chalkboard texture overlay */
+.chalkboard-bg {
+  background-color: var(--chalkboard);
+  background-image:
+    url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.03'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+}
