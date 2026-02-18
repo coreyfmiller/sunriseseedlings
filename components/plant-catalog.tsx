@@ -5,7 +5,7 @@ const plants: PlantData[] = [
   {
     name: "Cherry Tomatoes",
     variety: "Sun Gold Heirloom",
-    price: "$4.50",
+    price: "$5.00",
     image: "/images/tomatoes.jpg",
     borderColor: "red",
     badges: ["Kid-Grown", "Heirloom"],
@@ -25,7 +25,7 @@ const plants: PlantData[] = [
   {
     name: "Fresh Basil",
     variety: "Genovese Classic",
-    price: "$3.00",
+    price: "$5.00",
     image: "/images/basil.jpg",
     borderColor: "green",
     badges: ["Kid-Grown", "Super Tasty"],
@@ -35,7 +35,7 @@ const plants: PlantData[] = [
   {
     name: "Happy Sunflowers",
     variety: "Giant Mammoth",
-    price: "$3.50",
+    price: "$5.00",
     image: "/images/sunflowers.jpg",
     borderColor: "yellow",
     badges: ["Kid-Grown"],
@@ -45,7 +45,7 @@ const plants: PlantData[] = [
   {
     name: "Cool Mint",
     variety: "Spearmint Patch",
-    price: "$3.00",
+    price: "$5.00",
     image: "/images/mint.jpg",
     borderColor: "green",
     badges: ["Kid-Grown", "Super Tasty"],
@@ -55,7 +55,7 @@ const plants: PlantData[] = [
   {
     name: "Spicy Jalape\u00f1os",
     variety: "Early Hot",
-    price: "$4.00",
+    price: "$5.00",
     image: "/images/jalapenos.jpg",
     borderColor: "green",
     badges: ["Kid-Grown", "Heirloom"],
