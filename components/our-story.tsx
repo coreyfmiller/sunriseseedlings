@@ -29,9 +29,8 @@ export function OurStory() {
               </p>
               <p className="text-lg leading-relaxed text-chalkboard-text/80 md:text-xl">
                 Armed with tiny shovels, a garden hose, and way too much
-                enthusiasm, they planted their first batch of cherry tomatoes.
-                When neighbors started asking to buy some, Sunrise Seedlings was
-                born!
+                enthusiasm, they planted their first batch of cherry tomatoes
+                and that&apos;s when Sunrise Seedlings was born.
               </p>
               <p className="text-lg leading-relaxed text-chalkboard-text/80 md:text-xl">
                 Now, they grow over 10 varieties of veggies, herbs, and flowers.
