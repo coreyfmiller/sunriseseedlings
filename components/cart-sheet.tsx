@@ -20,6 +20,11 @@ import { ScrollArea } from "@/components/ui/scroll-area"
 export function CartSheet() {
     const { items, updateQuantity, removeItem, getTotalPrice, getTotalItems } = useCart()
     const [isCheckoutLoading, setIsCheckoutLoading] = useState(false)
+    const [isMounted, setIsMounted] = useState(false)
+
+    useEffect(() => {
+        setIsMounted(true)
+    }, [])
 
     // Reset loading state if user navigates back from Stripe
     useEffect(() => {
@@ -87,7 +92,7 @@ export function CartSheet() {
             <SheetTrigger asChild>
                 <Button variant="outline" size="icon" className="relative h-10 w-10 border-2 border-garden-green rounded-xl">
                     <ShoppingBasket className="h-5 w-5 text-garden-green" />
-                    {getTotalItems() > 0 && (
+                    {isMounted && getTotalItems() > 0 && (
                         <span className="absolute -right-2 -top-2 flex h-5 w-5 items-center justify-center rounded-full bg-sun-yellow text-[10px] font-bold text-foreground ring-2 ring-background">
                             {getTotalItems()}
                         </span>
