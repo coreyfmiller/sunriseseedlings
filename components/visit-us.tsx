@@ -11,7 +11,7 @@ export function VisitUs() {
             Come say hi!
           </span>
           <h2 className="font-serif text-4xl text-foreground md:text-5xl text-balance">
-            Visit the Greenhouse
+            Welcome To Our Greenhouse
           </h2>
           <p className="mt-3 max-w-lg text-base text-muted-foreground md:text-lg">
             We love meeting fellow plant people! Stop by and grab your
@@ -30,11 +30,11 @@ export function VisitUs() {
               Find Us
             </h3>
             <p className="text-base leading-relaxed text-muted-foreground">
-              42 Sunflower Lane
+              <span className="font-bold text-foreground">Pickups Only</span>
               <br />
-              Garden Heights, CA 95014
+              18 Sunrise Drive
               <br />
-              (The house with the big yellow mailbox!)
+              Quispamsis, NB
             </p>
           </div>
 
