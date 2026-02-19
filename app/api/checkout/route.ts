@@ -15,7 +15,7 @@ export async function POST(req: Request) {
                         name: item.name,
                         images: item.image ? [new URL(item.image, process.env.NEXT_PUBLIC_BASE_URL || 'http://localhost:3000').toString()] : [],
                     },
-                    unit_amount: 500, // $5.00 in cents
+                    unit_amount: Math.round(parseFloat(item.price.replace('$', '')) * 100),
                 },
                 quantity: item.quantity || 1,
             })),

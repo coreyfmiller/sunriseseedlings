@@ -1,7 +1,8 @@
 "use client"
 
-import { Sun, Sprout, ShoppingBasket, Menu, X } from "lucide-react"
+import { Sun, Menu, X } from "lucide-react"
 import { useState } from "react"
+import { CartSheet } from "./cart-sheet"
 
 export function Header() {
   const [mobileOpen, setMobileOpen] = useState(false)
@@ -35,27 +36,24 @@ export function Header() {
             </a>
           ))}
 
-          <a
-            href="#catalog"
-            className="flex items-center gap-2 rounded-2xl bg-garden-green px-5 py-2.5 text-sm font-bold text-secondary-foreground shadow-md transition-transform hover:scale-105 active:scale-95"
-          >
-            <ShoppingBasket className="h-4 w-4" aria-hidden="true" />
-            Shop Now
-          </a>
+          <CartSheet />
         </nav>
 
-        {/* Mobile menu button */}
-        <button
-          onClick={() => setMobileOpen(!mobileOpen)}
-          className="flex h-10 w-10 items-center justify-center rounded-2xl bg-muted md:hidden"
-          aria-label={mobileOpen ? "Close menu" : "Open menu"}
-        >
-          {mobileOpen ? (
-            <X className="h-5 w-5 text-foreground" />
-          ) : (
-            <Menu className="h-5 w-5 text-foreground" />
-          )}
-        </button>
+        {/* Mobile buttons */}
+        <div className="flex items-center gap-2 md:hidden">
+          <CartSheet />
+          <button
+            onClick={() => setMobileOpen(!mobileOpen)}
+            className="flex h-10 w-10 items-center justify-center rounded-xl bg-muted"
+            aria-label={mobileOpen ? "Close menu" : "Open menu"}
+          >
+            {mobileOpen ? (
+              <X className="h-5 w-5 text-foreground" />
+            ) : (
+              <Menu className="h-5 w-5 text-foreground" />
+            )}
+          </button>
+        </div>
       </div>
 
       {/* Mobile nav */}
@@ -79,14 +77,6 @@ export function Header() {
             </a>
           ))}
 
-          <a
-            href="#catalog"
-            onClick={() => setMobileOpen(false)}
-            className="flex items-center justify-center gap-2 rounded-2xl bg-garden-green px-5 py-3 text-base font-bold text-secondary-foreground shadow-md"
-          >
-            <ShoppingBasket className="h-5 w-5" aria-hidden="true" />
-            Shop Now
-          </a>
         </nav>
       )}
     </header>

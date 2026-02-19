@@ -1,9 +1,8 @@
 "use client"
 
 import Image from "next/image"
-import { useState } from "react"
-import { toast } from "sonner"
-import { ShoppingBasket, Loader2 } from "lucide-react"
+import { useCart } from "@/hooks/use-cart"
+import { ShoppingBasket } from "lucide-react"
 
 type BadgeType = "Kid-Grown" | "Heirloom" | "Super Tasty"
 
@@ -31,45 +30,10 @@ export interface PlantData {
 }
 
 export function PlantCard({ plant }: { plant: PlantData }) {
-  const [isLoading, setIsLoading] = useState(false)
+  const { addItem } = useCart()
 
-  const handleCheckout = async () => {
-    setIsLoading(true)
-    const toastId = toast.loading(`Preparing to buy ${plant.name}...`)
-
-    try {
-      const response = await fetch("/api/checkout", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({
-          items: [
-            {
-              name: plant.name,
-              image: plant.image,
-              quantity: 1,
-            },
-          ],
-        }),
-      })
-
-      const data = await response.json()
-
-      if (data.error) {
-        throw new Error(data.error)
-      }
-
-      if (data.url) {
-        window.location.href = data.url
-      } else {
-        throw new Error("Something went wrong. Please try again.")
-      }
-    } catch (error: any) {
-      console.error("Checkout error:", error)
-      toast.error(error.message || "Failed to start checkout", { id: toastId })
-      setIsLoading(false)
-    }
+  const handleAdd = () => {
+    addItem(plant)
   }
 
   return (
@@ -117,17 +81,12 @@ export function PlantCard({ plant }: { plant: PlantData }) {
             {plant.price}
           </span>
           <button
-            onClick={handleCheckout}
-            disabled={isLoading}
-            className="flex items-center gap-1.5 rounded-2xl bg-sun-yellow px-4 py-2 text-sm font-bold text-foreground shadow-sm transition-all hover:scale-105 active:scale-95 disabled:opacity-50 disabled:hover:scale-100"
-            aria-label={`Buy ${plant.name} now`}
+            onClick={handleAdd}
+            className="flex items-center gap-1.5 rounded-2xl bg-sun-yellow px-4 py-2 text-sm font-bold text-foreground shadow-sm transition-all hover:scale-105 active:scale-95"
+            aria-label={`Add ${plant.name} to basket`}
           >
-            {isLoading ? (
-              <Loader2 className="h-4 w-4 animate-spin" aria-hidden="true" />
-            ) : (
-              <ShoppingBasket className="h-4 w-4" aria-hidden="true" />
-            )}
-            {isLoading ? "Wait..." : "Buy"}
+            <ShoppingBasket className="h-4 w-4" aria-hidden="true" />
+            Add
           </button>
         </div>
       </div>
