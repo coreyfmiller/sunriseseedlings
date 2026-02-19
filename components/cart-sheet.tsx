@@ -28,13 +28,19 @@ export function CartSheet() {
         const toastId = toast.loading("Preparing checkout...")
 
         try {
-            const response = await fetch("/api/checkout", {
+            const response = await fetch("/api/create-checkout", {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json",
                 },
                 body: JSON.stringify({ items }),
             })
+
+            if (!response.ok) {
+                const text = await response.text()
+                console.error("Server error response:", text)
+                throw new Error(`Server error: ${response.status}`)
+            }
 
             const data = await response.json()
 
