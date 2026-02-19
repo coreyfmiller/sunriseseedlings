@@ -19,6 +19,27 @@ export const metadata: Metadata = {
   title: 'Sunrise Seedlings - From Our Garden to Yours!',
   description:
     'A kid-run plant nursery growing heirloom tomatoes, fresh herbs, colorful peppers, and sunshine-bright sunflowers. From our garden to yours!',
+  openGraph: {
+    title: 'Sunrise Seedlings - From Our Garden to Yours!',
+    description: 'A kid-run plant nursery growing heirloom tomatoes, fresh herbs, colorful peppers, and more. From our garden to yours!',
+    url: 'https://sunriseseedlings.com',
+    siteName: 'Sunrise Seedlings',
+    images: [
+      {
+        url: '/images/kids-garden.jpg',
+        width: 1200,
+        height: 630,
+        alt: 'Kids tending their garden at Sunrise Seedlings',
+      },
+    ],
+    type: 'website',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Sunrise Seedlings - From Our Garden to Yours!',
+    description: 'A kid-run plant nursery growing heirloom tomatoes, fresh herbs, colorful peppers, and more.',
+    images: ['/images/kids-garden.jpg'],
+  },
   icons: {
     icon: [
       {
