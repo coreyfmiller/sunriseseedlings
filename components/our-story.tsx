@@ -23,8 +23,8 @@ export function OurStory() {
             <div className="order-2 flex flex-col gap-6 lg:order-1">
               <p className="text-lg leading-relaxed text-chalkboard-text/90 md:text-xl">
                 It all started with one sunflower seed and a big dream. In the
-                spring of 2024, siblings Lily (age 10), Max (age 8), and little
-                Rosie (age 6) decided to turn their backyard into a real plant
+                spring of 2025, siblings Kaelan (age 12), Micah (age 10), and
+                Madelyn (age 8) decided to turn their backyard into a real plant
                 nursery.
               </p>
               <p className="text-lg leading-relaxed text-chalkboard-text/80 md:text-xl">
@@ -34,9 +34,9 @@ export function OurStory() {
                 born!
               </p>
               <p className="text-lg leading-relaxed text-chalkboard-text/80 md:text-xl">
-                Now we grow over 20 varieties of veggies, herbs, and flowers.
+                Now, they grow over 10 varieties of veggies, herbs, and flowers.
                 Every plant gets a name, a daily pep-talk, and the best dirt
-                money can buy (thanks, Mom).
+                money can buy.
               </p>
 
               {/* Fun stats */}
