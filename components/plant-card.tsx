@@ -1,8 +1,10 @@
 "use client"
 
+import { useState } from "react"
 import Image from "next/image"
 import { useCart } from "@/hooks/use-cart"
-import { ShoppingBasket } from "lucide-react"
+import { ShoppingBasket, Check } from "lucide-react"
+import { toast } from "sonner"
 
 type BadgeType = "Kid-Grown" | "Heirloom" | "Super Tasty"
 
@@ -31,9 +33,15 @@ export interface PlantData {
 
 export function PlantCard({ plant }: { plant: PlantData }) {
   const { addItem } = useCart()
+  const [added, setAdded] = useState(false)
 
   const handleAdd = () => {
     addItem(plant)
+    toast.success(`${plant.name} added to basket! 🌱`, {
+      duration: 2000,
+    })
+    setAdded(true)
+    setTimeout(() => setAdded(false), 1500)
   }
 
   return (
@@ -82,11 +90,18 @@ export function PlantCard({ plant }: { plant: PlantData }) {
           </span>
           <button
             onClick={handleAdd}
-            className="flex items-center gap-1.5 rounded-2xl bg-sun-yellow px-4 py-2 text-sm font-bold text-foreground shadow-sm transition-all hover:scale-105 active:scale-95"
+            className={`flex items-center gap-1.5 rounded-2xl px-4 py-2 text-sm font-bold shadow-sm transition-all duration-200 hover:scale-105 active:scale-95 ${added
+                ? "bg-garden-green text-white scale-105"
+                : "bg-sun-yellow text-foreground"
+              }`}
             aria-label={`Add ${plant.name} to basket`}
           >
-            <ShoppingBasket className="h-4 w-4" aria-hidden="true" />
-            Add
+            {added ? (
+              <Check className="h-4 w-4" aria-hidden="true" />
+            ) : (
+              <ShoppingBasket className="h-4 w-4" aria-hidden="true" />
+            )}
+            {added ? "Added!" : "Add"}
           </button>
         </div>
       </div>
