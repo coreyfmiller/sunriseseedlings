@@ -1,6 +1,6 @@
 "use client"
 
-import { useState } from "react"
+import { useState, useEffect } from "react"
 import Image from "next/image"
 import { ShoppingBasket, Trash2, Plus, Minus, Loader2 } from "lucide-react"
 import { toast } from "sonner"
@@ -20,6 +20,18 @@ import { ScrollArea } from "@/components/ui/scroll-area"
 export function CartSheet() {
     const { items, updateQuantity, removeItem, getTotalPrice, getTotalItems } = useCart()
     const [isCheckoutLoading, setIsCheckoutLoading] = useState(false)
+
+    // Reset loading state if user navigates back from Stripe
+    useEffect(() => {
+        const handlePageShow = (e: PageTransitionEvent) => {
+            if (e.persisted || performance.getEntriesByType("navigation").some((n: any) => n.type === "back_forward")) {
+                setIsCheckoutLoading(false)
+                toast.dismiss()
+            }
+        }
+        window.addEventListener("pageshow", handlePageShow)
+        return () => window.removeEventListener("pageshow", handlePageShow)
+    }, [])
 
     const handleCheckout = async () => {
         if (items.length === 0) return
@@ -57,6 +69,8 @@ export function CartSheet() {
             }
 
             if (data.url) {
+                // Dismiss toast before navigating away so it doesn't persist on back navigation
+                toast.dismiss(toastId)
                 window.location.href = data.url
             } else {
                 throw new Error("Something went wrong.")
