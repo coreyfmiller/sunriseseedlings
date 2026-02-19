@@ -26,7 +26,7 @@ export const metadata: Metadata = {
     siteName: 'Sunrise Seedlings',
     images: [
       {
-        url: '/images/kids-garden.jpg',
+        url: 'https://sunriseseedlings.com/images/kids-garden.jpg',
         width: 1200,
         height: 630,
         alt: 'Kids tending their garden at Sunrise Seedlings',
@@ -38,7 +38,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'Sunrise Seedlings - From Our Garden to Yours!',
     description: 'A kid-run plant nursery growing heirloom tomatoes, fresh herbs, colorful peppers, and more.',
-    images: ['/images/kids-garden.jpg'],
+    images: ['https://sunriseseedlings.com/images/kids-garden.jpg'],
   },
   icons: {
     icon: [
