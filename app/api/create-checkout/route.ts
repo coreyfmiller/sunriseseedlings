@@ -2,10 +2,10 @@ import { NextResponse } from 'next/server';
 import { stripe } from '@/lib/stripe';
 
 export async function POST(req: Request) {
-    if (!process.env.STRIPE_SECRET_KEY) {
-        console.error('STRIPE_SECRET_KEY is missing');
+    if (!stripe) {
+        console.error('STRIPE_SECRET_KEY is missing or invalid on the server.');
         return NextResponse.json(
-            { error: 'Stripe is not configured on the server.' },
+            { error: 'Server configuration error: Stripe key is missing.' },
             { status: 500 }
         );
     }
