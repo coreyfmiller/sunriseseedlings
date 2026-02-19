@@ -37,7 +37,7 @@ export function Hero() {
         {/* Fun badge */}
         <span className="mb-6 inline-flex items-center gap-2 rounded-full bg-sun-yellow/30 px-5 py-2 text-sm font-bold text-foreground md:text-base">
           <Sprout className="h-4 w-4 text-garden-green" aria-hidden="true" />
-          100% Kid-Grown with Love
+          100% Grown by Kids Who Love Gardening
           <Sun className="h-4 w-4 text-sun-yellow" aria-hidden="true" />
         </span>
 
@@ -48,8 +48,7 @@ export function Hero() {
         </h1>
 
         <p className="mt-6 max-w-2xl text-lg leading-relaxed text-muted-foreground md:text-xl">
-          We&apos;re a crew of young gardeners growing the tastiest tomatoes,
-          the freshest herbs, and the happiest sunflowers in town.
+          We&apos;re a crew of young gardeners growing the tastiest tomatoes, the freshest herbs, and the happiest peppers in town.
         </p>
 
         <div className="mt-10 flex flex-col items-center gap-4 sm:flex-row">
