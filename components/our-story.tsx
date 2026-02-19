@@ -41,7 +41,7 @@ export function OurStory() {
               {/* Fun stats */}
               <div className="mt-4 grid grid-cols-3 gap-4">
                 {[
-                  { number: "500+", label: "Plants Grown" },
+                  { number: "400", label: "Plants Grown" },
                   { number: "3", label: "Kid Gardeners" },
                   { number: "1", label: "Big Dream" },
                 ].map((stat) => (
