@@ -37,9 +37,17 @@ export function CartSheet() {
             })
 
             if (!response.ok) {
-                const text = await response.text()
-                console.error("Server error response:", text)
-                throw new Error(`Server error: ${response.status}`)
+                let errorMessage = `Server error: ${response.status}`
+                try {
+                    const errorData = await response.json()
+                    if (errorData.error) {
+                        errorMessage = errorData.error
+                    }
+                } catch {
+                    const text = await response.text()
+                    console.error("Server error response:", text)
+                }
+                throw new Error(errorMessage)
             }
 
             const data = await response.json()
