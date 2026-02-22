@@ -3,7 +3,7 @@ import Image from "next/image"
 
 export function Hero() {
   return (
-    <section className="relative overflow-hidden bg-warm-white">
+    <section className="relative overflow-hidden bg-warm-white" aria-label="Welcome to Sunrise Seedlings">
       {/* Background image */}
       <div className="absolute inset-0">
         <Image

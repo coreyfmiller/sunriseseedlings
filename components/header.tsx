@@ -11,7 +11,7 @@ export function Header() {
     <header className="sticky top-0 z-50 bg-warm-white/90 backdrop-blur-sm border-b-4 border-sun-yellow">
       <div className="mx-auto flex max-w-7xl items-center justify-between px-4 py-3 md:px-8">
         {/* Logo */}
-        <a href="#" className="flex items-center gap-2 group">
+        <a href="/" className="flex items-center gap-2 group" aria-label="Sunrise Seedlings — home">
           <span className="relative flex h-11 w-11 items-center justify-center rounded-full bg-sun-yellow transition-transform group-hover:scale-110">
             <Sun className="h-6 w-6 text-foreground animate-bounce-gentle" aria-hidden="true" />
           </span>

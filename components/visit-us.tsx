@@ -2,7 +2,7 @@ import { Sun, MapPin, Clock, Sprout } from "lucide-react"
 
 export function VisitUs() {
   return (
-    <section id="visit" className="bg-background py-16 md:py-24">
+    <section id="visit" className="bg-background py-16 md:py-24" aria-label="Visit Sunrise Seedlings">
       <div className="mx-auto max-w-7xl px-4 md:px-8">
         {/* Section heading */}
         <div className="mb-12 flex flex-col items-center text-center">

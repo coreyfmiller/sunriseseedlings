@@ -66,7 +66,7 @@ const plants: PlantData[] = [
 
 export function PlantCatalog() {
   return (
-    <section id="catalog" className="bg-background pt-10 pb-16 md:pt-14 md:pb-24">
+    <section id="catalog" className="bg-background pt-10 pb-16 md:pt-14 md:pb-24" aria-label="Plant Catalog">
       <div className="mx-auto max-w-7xl px-4 md:px-8">
         {/* Section heading */}
         <div className="mb-12 flex flex-col items-center text-center">

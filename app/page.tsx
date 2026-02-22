@@ -8,7 +8,7 @@ import { Footer } from "@/components/footer"
 // ── Structured Data (JSON-LD) ────────────────────────────────────────────────
 const localBusinessSchema = {
   "@context": "https://schema.org",
-  "@type": "LocalBusiness",
+  "@type": ["LocalBusiness", "GardenStore"],
   "@id": "https://sunriseseedlings.com/#business",
   name: "Sunrise Seedlings",
   alternateName: "Sunrise Seedlings Nursery",
@@ -17,14 +17,12 @@ const localBusinessSchema = {
   url: "https://sunriseseedlings.com",
   logo: "https://sunriseseedlings.com/icon.svg",
   image: "https://sunriseseedlings.com/images/kids-garden.jpg",
-  telephone: "",
   priceRange: "$",
   address: {
     "@type": "PostalAddress",
     streetAddress: "18 Sunrise Drive",
     addressLocality: "Quispamsis",
     addressRegion: "NB",
-    postalCode: "E2E",
     addressCountry: "CA",
   },
   geo: {
@@ -41,10 +39,20 @@ const localBusinessSchema = {
     },
   ],
   hasMap: "https://maps.google.com/?q=18+Sunrise+Drive+Quispamsis+NB",
-  servesCuisine: null,
   currenciesAccepted: "CAD",
   paymentAccepted: "Cash",
-  sameAs: [],
+}
+
+const websiteSchema = {
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "@id": "https://sunriseseedlings.com/#website",
+  url: "https://sunriseseedlings.com",
+  name: "Sunrise Seedlings",
+  description: "Kid-grown plants and seedlings for pickup in Quispamsis, NB.",
+  publisher: {
+    "@id": "https://sunriseseedlings.com/#organization",
+  },
 }
 
 const organizationSchema = {
@@ -199,6 +207,10 @@ export default function Home() {
   return (
     <>
       {/* Structured Data — injected into <head> via Next.js */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(websiteSchema) }}
+      />
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(localBusinessSchema) }}

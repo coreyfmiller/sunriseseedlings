@@ -3,7 +3,7 @@ import Image from "next/image"
 
 export function OurStory() {
   return (
-    <section id="story" className="relative overflow-hidden">
+    <section id="story" className="relative overflow-hidden" aria-label="Our Story">
       {/* Chalkboard background */}
       <div className="chalkboard-bg py-16 md:py-24">
         <div className="mx-auto max-w-7xl px-4 md:px-8">
@@ -65,7 +65,7 @@ export function OurStory() {
               <div className="relative mx-auto max-w-md overflow-hidden rounded-2xl border-4 border-dashed border-sun-yellow/40 shadow-2xl">
                 <Image
                   src="/images/kids-garden.jpg"
-                  alt="The Sunrise Seedlings garden with colorful pots and hand-painted signs"
+                  alt="Kaelan, Micah, and Madelyn tending seedlings at Sunrise Seedlings nursery in Quispamsis, NB"
                   width={600}
                   height={450}
                   className="w-full object-cover"
