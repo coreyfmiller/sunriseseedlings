@@ -3,6 +3,7 @@ import { Hero } from "@/components/hero"
 import { PlantCatalog } from "@/components/plant-catalog"
 import { OurStory } from "@/components/our-story"
 import { VisitUs } from "@/components/visit-us"
+import { Faq } from "@/components/faq"
 import { Footer } from "@/components/footer"
 
 // ── Structured Data (JSON-LD) ────────────────────────────────────────────────
@@ -155,23 +156,15 @@ const faqSchema = {
       name: "Where is Sunrise Seedlings located?",
       acceptedAnswer: {
         "@type": "Answer",
-        text: "Sunrise Seedlings is located at 18 Sunrise Drive, Quispamsis, NB. We offer pickup only — no delivery at this time.",
+        text: "Sunrise Seedlings is located at 18 Sunrise Drive in Quispamsis, NB. We are a pickup-only nursery \u2014 no delivery at this time. Just stop by on the weekend and grab your plants fresh from the garden!",
       },
     },
     {
       "@type": "Question",
-      name: "When can I pick up plants from Sunrise Seedlings?",
+      name: "When can I buy plants from Sunrise Seedlings?",
       acceptedAnswer: {
         "@type": "Answer",
-        text: "We are open for pickup every Saturday and Sunday from 9:00 AM to 2:00 PM, or until we sell out!",
-      },
-    },
-    {
-      "@type": "Question",
-      name: "Who runs Sunrise Seedlings?",
-      acceptedAnswer: {
-        "@type": "Answer",
-        text: "Sunrise Seedlings is run by three siblings — Kaelan (age 12), Micah (age 10), and Madelyn (age 8) — from their backyard in Quispamsis, NB.",
+        text: "We are open every Saturday and Sunday from 9:00 AM to 2:00 PM, or until we sell out! We run from spring through fall.",
       },
     },
     {
@@ -179,23 +172,31 @@ const faqSchema = {
       name: "What plants does Sunrise Seedlings sell?",
       acceptedAnswer: {
         "@type": "Answer",
-        text: "We sell heirloom cherry tomatoes (Sun Gold), sweet bell peppers, fresh Genovese basil, Giant Mammoth sunflowers, spearmint, and jalapeños — all grown by kids for $5.00 each.",
+        text: "We sell heirloom cherry tomatoes (Sun Gold), rainbow sweet bell peppers, Genovese basil, Giant Mammoth sunflowers, spearmint, and jalape\u00f1os. All plants are $5.00 CAD each and are grown by kids using organic soil and natural methods.",
       },
     },
     {
       "@type": "Question",
-      name: "How much do the plants cost?",
+      name: "Who runs Sunrise Seedlings?",
       acceptedAnswer: {
         "@type": "Answer",
-        text: "All plants are $5.00 CAD each. Cash accepted.",
+        text: "Sunrise Seedlings is run by three siblings \u2014 Kaelan (age 12), Micah (age 10), and Madelyn (age 8) \u2014 from their backyard in Quispamsis, New Brunswick. They started the nursery in spring 2025 with one sunflower seed and a big dream.",
       },
     },
     {
       "@type": "Question",
-      name: "Does Sunrise Seedlings deliver?",
+      name: "How much do the seedlings cost?",
       acceptedAnswer: {
         "@type": "Answer",
-        text: "Not yet! We are pickup-only from 18 Sunrise Drive, Quispamsis, NB on weekends.",
+        text: "All plants are $5.00 CAD each. We accept cash. Every dollar goes right back into seeds, soil, and the kids\u2019 gardening fund!",
+      },
+    },
+    {
+      "@type": "Question",
+      name: "Are the plants organically grown?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "Yes! Our plants are grown using natural methods, quality soil, and a lot of kid-powered love. No shortcuts, no chemicals \u2014 just good old-fashioned gardening by three enthusiastic siblings in Quispamsis, NB.",
       },
     },
   ],
@@ -235,6 +236,7 @@ export default function Home() {
           <PlantCatalog />
           <OurStory />
           <VisitUs />
+          <Faq />
         </main>
         <Footer />
       </div>

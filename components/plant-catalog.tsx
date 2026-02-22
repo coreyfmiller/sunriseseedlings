@@ -75,11 +75,11 @@ export function PlantCatalog() {
             Fresh from the dirt
           </span>
           <h2 className="font-serif text-4xl text-foreground md:text-5xl text-balance">
-            The Plant Catalog
+            Fresh Seedlings for Sale
           </h2>
           <p className="mt-3 max-w-lg text-base text-muted-foreground md:text-lg">
-            Every seedling is planted, watered, and loved by our team of young
-            gardeners. Pick your favorites!
+            Kid-grown heirloom tomatoes, herbs, peppers, and sunflowers — available for
+            pickup in Quispamsis, NB every weekend. All plants $5.00 CAD.
           </p>
         </div>
 
