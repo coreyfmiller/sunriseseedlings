@@ -23,6 +23,21 @@ export function Footer() {
           &copy; {new Date().getFullYear()} Sunrise Seedlings. All rights reserved.
         </p>
       </div>
+
+      {/* Attribution */}
+      <div className="border-t border-secondary-foreground/10 py-3 text-center">
+        <p className="text-xs text-secondary-foreground/50">
+          Built by{" "}
+          <a
+            href="https://www.fundylogic.com"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-secondary-foreground/70 underline-offset-2 transition-colors hover:text-secondary-foreground hover:underline"
+          >
+            Fundy Logic
+          </a>
+        </p>
+      </div>
     </footer>
   )
 }
