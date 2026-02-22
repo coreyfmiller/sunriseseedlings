@@ -15,30 +15,64 @@ const bubblegum = Bubblegum_Sans({
   variable: '--font-bubblegum',
 })
 
+const siteUrl = 'https://sunriseseedlings.com'
+const ogImage = `${siteUrl}/images/kids-garden.jpg`
+
 export const metadata: Metadata = {
-  title: 'Sunrise Seedlings - From Our Garden to Yours!',
+  metadataBase: new URL(siteUrl),
+  title: {
+    default: 'Sunrise Seedlings – Kid-Grown Plants in Quispamsis, NB',
+    template: '%s | Sunrise Seedlings',
+  },
   description:
-    'A kid-run plant nursery growing heirloom tomatoes, fresh herbs, colorful peppers, and sunshine-bright sunflowers. From our garden to yours!',
+    'Sunrise Seedlings is a kid-run backyard plant nursery in Quispamsis, NB. We grow heirloom tomatoes, fresh herbs, sweet peppers, jalapeños, mint, and giant sunflowers — available for pickup every weekend.',
+  keywords: [
+    'Sunrise Seedlings',
+    'plant nursery Quispamsis',
+    'kid-run nursery',
+    'seedlings for sale New Brunswick',
+    'heirloom tomatoes NB',
+    'garden plants Quispamsis',
+    'local plant nursery',
+    'kid-grown plants',
+    'herbs for sale NB',
+    'sunflowers Quispamsis',
+    'backyard nursery New Brunswick',
+    'cherry tomatoes seedlings',
+    'sweet peppers seedlings',
+    'basil plants for sale',
+    'mint plants NB',
+  ],
+  authors: [{ name: 'Sunrise Seedlings' }],
+  creator: 'Sunrise Seedlings',
+  publisher: 'Sunrise Seedlings',
+  category: 'Local Business – Plant Nursery',
+  alternates: {
+    canonical: siteUrl,
+  },
   openGraph: {
-    title: 'Sunrise Seedlings - From Our Garden to Yours!',
-    description: 'A kid-run plant nursery growing heirloom tomatoes, fresh herbs, colorful peppers, and more. From our garden to yours!',
-    url: 'https://sunriseseedlings.com',
+    title: 'Sunrise Seedlings – Kid-Grown Plants in Quispamsis, NB',
+    description:
+      'A kid-run backyard nursery in Quispamsis, NB growing heirloom tomatoes, herbs, peppers, mint, and giant sunflowers. Pickup weekends only — come say hi!',
+    url: siteUrl,
     siteName: 'Sunrise Seedlings',
+    locale: 'en_CA',
     images: [
       {
-        url: 'https://sunriseseedlings.com/images/kids-garden.jpg',
+        url: ogImage,
         width: 1200,
         height: 630,
-        alt: 'Kids tending their garden at Sunrise Seedlings',
+        alt: 'Kids tending their garden at Sunrise Seedlings nursery in Quispamsis NB',
       },
     ],
     type: 'website',
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Sunrise Seedlings - From Our Garden to Yours!',
-    description: 'A kid-run plant nursery growing heirloom tomatoes, fresh herbs, colorful peppers, and more.',
-    images: ['https://sunriseseedlings.com/images/kids-garden.jpg'],
+    title: 'Sunrise Seedlings – Kid-Grown Plants in Quispamsis, NB',
+    description:
+      'A kid-run backyard plant nursery in Quispamsis, NB. Heirloom tomatoes, herbs, peppers & more. Weekend pickups!',
+    images: [ogImage],
   },
   icons: {
     icon: [

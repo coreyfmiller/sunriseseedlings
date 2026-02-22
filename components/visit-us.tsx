@@ -22,24 +22,40 @@ export function VisitUs() {
         {/* Info cards */}
         <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
           {/* Location card */}
-          <div className="flex flex-col items-center gap-4 rounded-2xl border-3 border-garden-green bg-card p-8 text-center shadow-md">
+          <div
+            className="flex flex-col items-center gap-4 rounded-2xl border-3 border-garden-green bg-card p-8 text-center shadow-md"
+            itemScope
+            itemType="https://schema.org/LocalBusiness"
+          >
             <div className="flex h-14 w-14 items-center justify-center rounded-full bg-garden-green/10">
               <MapPin className="h-7 w-7 text-garden-green" aria-hidden="true" />
             </div>
             <h3 className="font-serif text-xl text-foreground">
               Find Us
             </h3>
-            <p className="text-base leading-relaxed text-muted-foreground">
+            <address
+              className="text-base leading-relaxed text-muted-foreground not-italic"
+              itemProp="address"
+              itemScope
+              itemType="https://schema.org/PostalAddress"
+            >
               <span className="font-bold text-foreground">Pickups Only</span>
               <br />
-              18 Sunrise Drive
+              <span itemProp="streetAddress">18 Sunrise Drive</span>
               <br />
-              Quispamsis, NB
-            </p>
+              <span itemProp="addressLocality">Quispamsis</span>,{" "}
+              <span itemProp="addressRegion">NB</span>
+              <br />
+              <span itemProp="addressCountry">Canada</span>
+            </address>
           </div>
 
           {/* Hours card */}
-          <div className="flex flex-col items-center gap-4 rounded-2xl border-3 border-sun-yellow bg-card p-8 text-center shadow-md">
+          <div
+            className="flex flex-col items-center gap-4 rounded-2xl border-3 border-sun-yellow bg-card p-8 text-center shadow-md"
+            itemScope
+            itemType="https://schema.org/OpeningHoursSpecification"
+          >
             <div className="flex h-14 w-14 items-center justify-center rounded-full bg-sun-yellow/20">
               <Clock className="h-7 w-7 text-foreground" aria-hidden="true" />
             </div>
@@ -47,9 +63,12 @@ export function VisitUs() {
               Open Hours
             </h3>
             <p className="text-base leading-relaxed text-muted-foreground">
-              Saturday & Sunday
+              <span itemProp="dayOfWeek" content="Saturday">Saturday</span>{" &"}{" "}
+              <span itemProp="dayOfWeek" content="Sunday">Sunday</span>
               <br />
-              9:00 AM - 2:00 PM
+              <time itemProp="opens" dateTime="09:00">9:00 AM</time>
+              {" – "}
+              <time itemProp="closes" dateTime="14:00">2:00 PM</time>
               <br />
               (Or until we sell out!)
             </p>

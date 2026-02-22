@@ -8,7 +8,7 @@ export function Hero() {
       <div className="absolute inset-0">
         <Image
           src="/images/hero-garden.jpg"
-          alt=""
+          alt="Kids tending their backyard garden at Sunrise Seedlings nursery in Quispamsis, New Brunswick"
           fill
           className="object-cover opacity-70"
           priority
@@ -48,7 +48,7 @@ export function Hero() {
         </h1>
 
         <p className="mt-6 max-w-2xl text-lg leading-relaxed text-muted-foreground md:text-xl">
-          We&apos;re a crew of young gardeners growing the tastiest tomatoes, the freshest herbs, and the happiest peppers in town.
+          We&apos;re a crew of young gardeners in Quispamsis, NB growing heirloom tomatoes, fresh herbs, sweet peppers, and giant sunflowers — ready for pickup every weekend!
         </p>
 
         <div className="mt-10 flex flex-col items-center gap-4 sm:flex-row">
