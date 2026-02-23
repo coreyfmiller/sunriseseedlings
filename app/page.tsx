@@ -17,7 +17,7 @@ const localBusinessSchema = {
     "Sunrise Seedlings is a kid-run backyard plant nursery in Quispamsis, NB. We grow heirloom tomatoes, fresh herbs, sweet peppers, jalapeños, mint, and giant sunflowers — available for pickup every weekend.",
   url: "https://sunriseseedlings.com",
   logo: "https://sunriseseedlings.com/icon.svg",
-  image: "https://sunriseseedlings.com/images/kids-garden3.png",
+  image: "https://sunriseseedlings.com/images/sunriseseedlings.png",
   priceRange: "$",
   address: {
     "@type": "PostalAddress",

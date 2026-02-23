@@ -16,7 +16,7 @@ const bubblegum = Bubblegum_Sans({
 })
 
 const siteUrl = 'https://sunriseseedlings.com'
-const ogImage = `${siteUrl}/images/kids-garden3.png`
+const ogImage = `${siteUrl}/images/sunriseseedlings.png`
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
