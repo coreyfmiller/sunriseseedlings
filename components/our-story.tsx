@@ -64,7 +64,7 @@ export function OurStory() {
             <div className="order-1 lg:order-2">
               <div className="relative mx-auto max-w-md overflow-hidden rounded-2xl border-4 border-dashed border-sun-yellow/40 shadow-2xl">
                 <Image
-                  src="/images/kids-garden.jpg"
+                  src="/images/kids-garden3.png"
                   alt="Kaelan, Micah, and Madelyn tending seedlings at Sunrise Seedlings nursery in Quispamsis, NB"
                   width={600}
                   height={450}
