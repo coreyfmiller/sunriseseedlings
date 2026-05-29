@@ -1,10 +1,5 @@
-import { Header } from "@/components/header"
-import { Hero } from "@/components/hero"
-import { PlantCatalog } from "@/components/plant-catalog"
-import { OurStory } from "@/components/our-story"
-import { VisitUs } from "@/components/visit-us"
-import { Faq } from "@/components/faq"
-import { Footer } from "@/components/footer"
+import { Sun, Sprout, Snowflake } from "lucide-react"
+import Image from "next/image"
 
 // ── Structured Data (JSON-LD) ────────────────────────────────────────────────
 const localBusinessSchema = {
@@ -12,13 +7,11 @@ const localBusinessSchema = {
   "@type": ["LocalBusiness", "GardenStore"],
   "@id": "https://sunriseseedlings.com/#business",
   name: "Sunrise Seedlings",
-  alternateName: "Sunrise Seedlings Nursery",
   description:
-    "Sunrise Seedlings is a kid-run backyard plant nursery in Quispamsis, NB. We grow heirloom tomatoes, fresh herbs, sweet peppers, jalapeños, mint, and giant sunflowers — available for pickup every weekend.",
+    "Sunrise Seedlings is a kid-run backyard plant nursery in Quispamsis, NB. Closed for the season — see you in spring 2027!",
   url: "https://sunriseseedlings.com",
   logo: "https://sunriseseedlings.com/icon.svg",
   image: "https://sunriseseedlings.com/images/SunriseSeedlings.png",
-  priceRange: "$",
   address: {
     "@type": "PostalAddress",
     streetAddress: "18 Sunrise Drive",
@@ -30,29 +23,6 @@ const localBusinessSchema = {
     "@type": "GeoCoordinates",
     latitude: 45.4309,
     longitude: -65.9847,
-  },
-  openingHoursSpecification: [
-    {
-      "@type": "OpeningHoursSpecification",
-      dayOfWeek: ["Saturday", "Sunday"],
-      opens: "09:00",
-      closes: "14:00",
-    },
-  ],
-  hasMap: "https://maps.google.com/?q=18+Sunrise+Drive+Quispamsis+NB",
-  currenciesAccepted: "CAD",
-  paymentAccepted: "Cash",
-}
-
-const websiteSchema = {
-  "@context": "https://schema.org",
-  "@type": "WebSite",
-  "@id": "https://sunriseseedlings.com/#website",
-  url: "https://sunriseseedlings.com",
-  name: "Sunrise Seedlings",
-  description: "Kid-grown plants and seedlings for pickup in Quispamsis, NB.",
-  publisher: {
-    "@id": "https://sunriseseedlings.com/#organization",
   },
 }
 
@@ -69,7 +39,7 @@ const organizationSchema = {
     height: 512,
   },
   description:
-    "Kid-grown plants and seedlings in Quispamsis, NB. Heirloom tomatoes, herbs, peppers, sunflowers and more.",
+    "Kid-grown plants and seedlings in Quispamsis, NB. Closed for the season — back in 2027!",
   foundingDate: "2025",
   founders: [
     { "@type": "Person", name: "Kaelan" },
@@ -78,140 +48,12 @@ const organizationSchema = {
   ],
 }
 
-const productListSchema = {
-  "@context": "https://schema.org",
-  "@type": "ItemList",
-  name: "Sunrise Seedlings Plant Catalog",
-  description: "Fresh seedlings grown by kids and available for pickup in Quispamsis NB",
-  itemListElement: [
-    {
-      "@type": "ListItem",
-      position: 1,
-      item: {
-        "@type": "Product",
-        name: "Cherry Tomatoes – Sun Gold Heirloom",
-        description: "Bursting-sweet golden cherry tomatoes grown by kids. Heirloom variety.",
-        offers: { "@type": "Offer", price: "5.00", priceCurrency: "CAD", availability: "https://schema.org/InStock" },
-      },
-    },
-    {
-      "@type": "ListItem",
-      position: 2,
-      item: {
-        "@type": "Product",
-        name: "Sweet Peppers – Rainbow Bell Mix",
-        description: "Colorful sweet bell pepper seedlings in red, orange, and yellow.",
-        offers: { "@type": "Offer", price: "5.00", priceCurrency: "CAD", availability: "https://schema.org/InStock" },
-      },
-    },
-    {
-      "@type": "ListItem",
-      position: 3,
-      item: {
-        "@type": "Product",
-        name: "Fresh Basil – Genovese Classic",
-        description: "Fragrant Italian basil seedlings perfect for pesto and cooking.",
-        offers: { "@type": "Offer", price: "5.00", priceCurrency: "CAD", availability: "https://schema.org/InStock" },
-      },
-    },
-    {
-      "@type": "ListItem",
-      position: 4,
-      item: {
-        "@type": "Product",
-        name: "Happy Sunflowers – Giant Mammoth",
-        description: "Towering sunflowers that grow taller than you! Great for bees and butterflies.",
-        offers: { "@type": "Offer", price: "5.00", priceCurrency: "CAD", availability: "https://schema.org/InStock" },
-      },
-    },
-    {
-      "@type": "ListItem",
-      position: 5,
-      item: {
-        "@type": "Product",
-        name: "Cool Mint – Spearmint Patch",
-        description: "Fresh spearmint plants for lemonade, tea, and cooking.",
-        offers: { "@type": "Offer", price: "5.00", priceCurrency: "CAD", availability: "https://schema.org/InStock" },
-      },
-    },
-    {
-      "@type": "ListItem",
-      position: 6,
-      item: {
-        "@type": "Product",
-        name: "Spicy Jalapeños – Early Hot",
-        description: "Kid-grown jalapeño seedlings. A little kick for your tacos and salsa!",
-        offers: { "@type": "Offer", price: "5.00", priceCurrency: "CAD", availability: "https://schema.org/InStock" },
-      },
-    },
-  ],
-}
-
-const faqSchema = {
-  "@context": "https://schema.org",
-  "@type": "FAQPage",
-  mainEntity: [
-    {
-      "@type": "Question",
-      name: "Where is Sunrise Seedlings located?",
-      acceptedAnswer: {
-        "@type": "Answer",
-        text: "Sunrise Seedlings is located at 18 Sunrise Drive in Quispamsis, NB. We are a pickup-only nursery \u2014 no delivery at this time. Just stop by on the weekend and grab your plants fresh from the garden!",
-      },
-    },
-    {
-      "@type": "Question",
-      name: "When can I buy plants from Sunrise Seedlings?",
-      acceptedAnswer: {
-        "@type": "Answer",
-        text: "We are open every Saturday and Sunday from 9:00 AM to 2:00 PM, or until we sell out! We run from spring through fall.",
-      },
-    },
-    {
-      "@type": "Question",
-      name: "What plants does Sunrise Seedlings sell?",
-      acceptedAnswer: {
-        "@type": "Answer",
-        text: "We sell heirloom cherry tomatoes (Sun Gold), rainbow sweet bell peppers, Genovese basil, Giant Mammoth sunflowers, spearmint, and jalape\u00f1os. All plants are $5.00 CAD each and are grown by kids using organic soil and natural methods.",
-      },
-    },
-    {
-      "@type": "Question",
-      name: "Who runs Sunrise Seedlings?",
-      acceptedAnswer: {
-        "@type": "Answer",
-        text: "Sunrise Seedlings is run by three siblings \u2014 Kaelan (age 12), Micah (age 10), and Madelyn (age 8) \u2014 from their backyard in Quispamsis, New Brunswick. They started the nursery in spring 2025 with one sunflower seed and a big dream.",
-      },
-    },
-    {
-      "@type": "Question",
-      name: "How much do the seedlings cost?",
-      acceptedAnswer: {
-        "@type": "Answer",
-        text: "All plants are $5.00 CAD each. We accept cash. Every dollar goes right back into seeds, soil, and the kids\u2019 gardening fund!",
-      },
-    },
-    {
-      "@type": "Question",
-      name: "Are the plants organically grown?",
-      acceptedAnswer: {
-        "@type": "Answer",
-        text: "Yes! Our plants are grown using natural methods, quality soil, and a lot of kid-powered love. No shortcuts, no chemicals \u2014 just good old-fashioned gardening by three enthusiastic siblings in Quispamsis, NB.",
-      },
-    },
-  ],
-}
-
 // ────────────────────────────────────────────────────────────────────────────
 
 export default function Home() {
   return (
     <>
-      {/* Structured Data — injected into <head> via Next.js */}
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(websiteSchema) }}
-      />
+      {/* Structured Data */}
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(localBusinessSchema) }}
@@ -220,25 +62,111 @@ export default function Home() {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationSchema) }}
       />
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(productListSchema) }}
-      />
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
-      />
 
       <div className="flex min-h-screen flex-col">
-        <Header />
-        <main className="flex-1">
-          <Hero />
-          <PlantCatalog />
-          <OurStory />
-          <VisitUs />
-          <Faq />
+        {/* Simple header */}
+        <header className="border-b-4 border-sun-yellow bg-warm-white/90 backdrop-blur-sm">
+          <div className="mx-auto flex max-w-7xl items-center justify-center px-4 py-4">
+            <div className="flex items-center gap-2">
+              <span className="flex h-11 w-11 items-center justify-center rounded-full bg-sun-yellow">
+                <Sun className="h-6 w-6 text-foreground" aria-hidden="true" />
+              </span>
+              <span className="font-serif text-2xl tracking-tight text-garden-green md:text-3xl">
+                Sunrise Seedlings
+              </span>
+            </div>
+          </div>
+        </header>
+
+        {/* Main content — closed for season */}
+        <main className="relative flex flex-1 flex-col items-center justify-center overflow-hidden bg-warm-white px-4 py-16 text-center">
+          {/* Background image */}
+          <div className="absolute inset-0">
+            <Image
+              src="/images/hero-garden.jpg"
+              alt="The Sunrise Seedlings garden resting for winter"
+              fill
+              className="object-cover opacity-40"
+              priority
+            />
+            <div className="absolute inset-0 bg-gradient-to-b from-background/70 via-background/50 to-background/80" />
+          </div>
+
+          {/* Decorative floating elements */}
+          <div className="pointer-events-none absolute inset-0" aria-hidden="true">
+            <div className="absolute left-[10%] top-[20%] animate-float">
+              <Snowflake className="h-8 w-8 text-sky-300 opacity-40 md:h-12 md:w-12" />
+            </div>
+            <div className="absolute right-[15%] top-[15%] animate-float" style={{ animationDelay: "1s" }}>
+              <Snowflake className="h-6 w-6 text-sky-200 opacity-30 md:h-10 md:w-10" />
+            </div>
+            <div className="absolute bottom-[25%] left-[15%] animate-float" style={{ animationDelay: "2s" }}>
+              <Sprout className="h-6 w-6 text-garden-green opacity-30 md:h-10 md:w-10" />
+            </div>
+            <div className="absolute bottom-[20%] right-[12%] animate-float" style={{ animationDelay: "0.5s" }}>
+              <Sun className="h-8 w-8 text-sun-yellow opacity-25 md:h-10 md:w-10" />
+            </div>
+          </div>
+
+          {/* Content */}
+          <div className="relative z-10 mx-auto max-w-2xl">
+            <span className="mb-6 inline-flex items-center gap-2 rounded-full bg-sky-100 px-5 py-2 text-sm font-bold text-foreground md:text-base">
+              <Snowflake className="h-4 w-4 text-sky-400" aria-hidden="true" />
+              Closed for the Season
+              <Snowflake className="h-4 w-4 text-sky-400" aria-hidden="true" />
+            </span>
+
+            <h1 className="mt-4 font-serif text-4xl leading-tight text-foreground md:text-6xl lg:text-7xl text-balance">
+              Thanks for an
+              <br />
+              <span className="text-garden-green">Amazing Season!</span>
+            </h1>
+
+            <p className="mt-6 text-lg leading-relaxed text-muted-foreground md:text-xl">
+              Our garden is tucked in for the winter. We had so much fun growing plants and meeting all of you this year. We&apos;re already dreaming about what to grow next!
+            </p>
+
+            <div className="mt-8 rounded-2xl border-2 border-sun-yellow/50 bg-background/80 px-6 py-5 backdrop-blur-sm">
+              <p className="text-base font-bold text-foreground md:text-lg">
+                <Sprout className="mr-2 inline h-5 w-5 text-garden-green" aria-hidden="true" />
+                See you in Spring 2027!
+              </p>
+              <p className="mt-2 text-sm text-muted-foreground">
+                We&apos;ll be back with fresh seedlings, big sunflowers, and lots of dirt under our fingernails.
+              </p>
+            </div>
+
+            <p className="mt-10 text-sm text-muted-foreground">
+              — Kaelan, Micah &amp; Madelyn
+            </p>
+          </div>
         </main>
-        <Footer />
+
+        {/* Simple footer */}
+        <footer className="border-t-4 border-sun-yellow bg-garden-green text-secondary-foreground">
+          <div className="mx-auto max-w-7xl px-4 py-6 text-center">
+            <div className="flex items-center justify-center gap-2">
+              <span className="flex h-8 w-8 items-center justify-center rounded-full bg-sun-yellow">
+                <Sun className="h-4 w-4 text-foreground" aria-hidden="true" />
+              </span>
+              <span className="font-serif text-lg text-secondary-foreground">Sunrise Seedlings</span>
+            </div>
+            <p className="mt-2 text-sm text-secondary-foreground/70">
+              18 Sunrise Drive · Quispamsis, NB
+            </p>
+            <p className="mt-3 text-xs text-secondary-foreground/50">
+              &copy; {new Date().getFullYear()} Sunrise Seedlings · Built by{" "}
+              <a
+                href="https://www.fundylogic.com"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-secondary-foreground/70 underline-offset-2 transition-colors hover:text-secondary-foreground hover:underline"
+              >
+                Fundy Logic
+              </a>
+            </p>
+          </div>
+        </footer>
       </div>
     </>
   )
