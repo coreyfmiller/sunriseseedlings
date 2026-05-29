@@ -1,10 +1,6 @@
 "use client"
 
-import { useState } from "react"
 import Image from "next/image"
-import { useCart } from "@/hooks/use-cart"
-import { ShoppingBasket, Check } from "lucide-react"
-import { toast } from "sonner"
 
 type BadgeType = "Kid-Grown" | "Heirloom" | "Super Tasty"
 
@@ -32,18 +28,6 @@ export interface PlantData {
 }
 
 export function PlantCard({ plant }: { plant: PlantData }) {
-  const { addItem } = useCart()
-  const [added, setAdded] = useState(false)
-
-  const handleAdd = () => {
-    addItem(plant)
-    toast.success(`${plant.name} added to basket! 🌱`, {
-      duration: 2000,
-    })
-    setAdded(true)
-    setTimeout(() => setAdded(false), 1500)
-  }
-
   return (
     <article
       className={`group relative flex flex-col overflow-hidden rounded-2xl border-4 ${borderColors[plant.borderColor] ?? "border-border"
@@ -88,21 +72,9 @@ export function PlantCard({ plant }: { plant: PlantData }) {
           <span className="text-xl font-bold text-garden-green">
             {plant.price}
           </span>
-          <button
-            onClick={handleAdd}
-            className={`flex items-center gap-1.5 rounded-2xl px-4 py-2 text-sm font-bold shadow-sm transition-all duration-200 hover:scale-105 active:scale-95 ${added
-                ? "bg-garden-green text-white scale-105"
-                : "bg-sun-yellow text-foreground"
-              }`}
-            aria-label={`Add ${plant.name} to basket`}
-          >
-            {added ? (
-              <Check className="h-4 w-4" aria-hidden="true" />
-            ) : (
-              <ShoppingBasket className="h-4 w-4" aria-hidden="true" />
-            )}
-            {added ? "Added!" : "Add"}
-          </button>
+          <span className="flex items-center gap-1.5 rounded-2xl bg-muted px-4 py-2 text-sm font-bold text-muted-foreground">
+            Sold Out for 2026
+          </span>
         </div>
       </div>
     </article>

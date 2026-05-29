@@ -1,4 +1,5 @@
 import { Header } from "@/components/header"
+import { SeasonBanner } from "@/components/season-banner"
 import { Hero } from "@/components/hero"
 import { PlantCatalog } from "@/components/plant-catalog"
 import { OurStory } from "@/components/our-story"
@@ -230,6 +231,7 @@ export default function Home() {
       />
 
       <div className="flex min-h-screen flex-col">
+        <SeasonBanner />
         <Header />
         <main className="flex-1">
           <Hero />

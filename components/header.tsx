@@ -2,7 +2,6 @@
 
 import { Sun, Menu, X } from "lucide-react"
 import { useState } from "react"
-import { CartSheet } from "./cart-sheet"
 
 export function Header() {
   const [mobileOpen, setMobileOpen] = useState(false)
@@ -35,13 +34,10 @@ export function Header() {
               {item.label}
             </a>
           ))}
-
-          <CartSheet />
         </nav>
 
         {/* Mobile buttons */}
         <div className="flex items-center gap-2 md:hidden">
-          <CartSheet />
           <button
             onClick={() => setMobileOpen(!mobileOpen)}
             className="flex h-10 w-10 items-center justify-center rounded-xl bg-muted"
