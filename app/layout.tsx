@@ -21,17 +21,27 @@ const ogImage = `${siteUrl}/images/SunriseSeedlings.png`
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
   title: {
-    default: 'Sunrise Seedlings – Closed for the Season | See You in 2027!',
+    default: 'Sunrise Seedlings – Kid-Grown Plants in Quispamsis, NB',
     template: '%s | Sunrise Seedlings',
   },
   description:
-    'Sunrise Seedlings is a kid-run backyard plant nursery in Quispamsis, NB. We are closed for the season — see you in spring 2027!',
+    'Sunrise Seedlings is a kid-run backyard plant nursery in Quispamsis, NB. We grow heirloom tomatoes, fresh herbs, sweet peppers, jalapeños, mint, and giant sunflowers — available for pickup every weekend.',
   keywords: [
     'Sunrise Seedlings',
     'plant nursery Quispamsis',
     'kid-run nursery',
+    'seedlings for sale New Brunswick',
+    'heirloom tomatoes NB',
+    'garden plants Quispamsis',
+    'local plant nursery',
     'kid-grown plants',
+    'herbs for sale NB',
+    'sunflowers Quispamsis',
     'backyard nursery New Brunswick',
+    'cherry tomatoes seedlings',
+    'sweet peppers seedlings',
+    'basil plants for sale',
+    'mint plants NB',
   ],
   authors: [{ name: 'Sunrise Seedlings' }],
   creator: 'Sunrise Seedlings',
@@ -41,9 +51,9 @@ export const metadata: Metadata = {
     canonical: siteUrl,
   },
   openGraph: {
-    title: 'Sunrise Seedlings – Closed for the Season | See You in 2027!',
+    title: 'Sunrise Seedlings – Kid-Grown Plants in Quispamsis, NB',
     description:
-      'Sunrise Seedlings is a kid-run backyard nursery in Quispamsis, NB. We are closed for the season — see you in spring 2027!',
+      'A kid-run backyard nursery in Quispamsis, NB growing heirloom tomatoes, herbs, peppers, mint, and giant sunflowers. Pickup weekends only — come say hi!',
     url: siteUrl,
     siteName: 'Sunrise Seedlings',
     locale: 'en_CA',
@@ -59,9 +69,9 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Sunrise Seedlings – Closed for the Season | See You in 2027!',
+    title: 'Sunrise Seedlings – Kid-Grown Plants in Quispamsis, NB',
     description:
-      'A kid-run backyard plant nursery in Quispamsis, NB. Closed for the season — see you in spring 2027!',
+      'A kid-run backyard plant nursery in Quispamsis, NB. Heirloom tomatoes, herbs, peppers & more. Weekend pickups!',
     images: [ogImage],
   },
   icons: {
